@@ -45,6 +45,10 @@ fun main() {
     val originalArray = arrayOf<Int>(1,2,3,4,5,6,7,8,9,10)
     print("\nOriginal Array: ")
     printArray(originalArray)
+    // Get reversed array using reverse function
+    val reversedArray = reverse(originalArray)
+    print("Reversed Array: ")
+    printArray(reversedArray)
     
 }
 
@@ -127,4 +131,13 @@ fun printArray(array: Array<Int>) {
     result = result.dropLast(2) // dropLast(n) will remove last n characters from the string
     result += "]"
     println(result)
+}
+
+// This function takes array as a parameter and return its reversed value
+fun reverse(originalArray: Array<Int>): Array<Int> {
+    var reversedArray = mutableListOf<Int> ()   // Empty mutable list
+    for (i in 0 until originalArray.size) {
+        reversedArray.add(originalArray[originalArray.size - (i + 1)])
+    }
+    return reversedArray.toTypedArray()     // Convert mutable list to array and return
 }
