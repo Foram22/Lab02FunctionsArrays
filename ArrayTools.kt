@@ -7,48 +7,41 @@
 fun main() {
     /* ---------------Perform Encryption--------------- */
     // Get String from user
-    val plainText = checkStringUserInput("Enter any string that you want to encrypt: ")
+    val plainText = checkUserInput("Enter any string that you want to encrypt: ")
     // Get shift value from user
-    val shiftValue = checkIntUserInput("Enter the shift value for encryption: ")
+    val shiftValue = checkUserInput("Enter the shift value for encryption: ")
     // Get cipher text of given plain text and shift key using encrypt function.
-    val encryptedString = encrypt(plainText, shiftValue)
+    val encryptedString = encrypt(plainText, shiftValue.toInt())
     println("Encrypted string: $encryptedString")
 }
 
-// Check entered value is integer or not
-fun checkIntUserInput(message: String): Int {
-    var userInput = 0
+// This function takes value from user
+fun checkUserInput(isInt: Boolean, message: String): String {
+    var userInput = ""
     var isValid = false
     while(!isValid){
         print(message)
         val stringInput = readLine()
-        try {
-            userInput = stringInput!!.toInt()
-            isValid = true
-        }
-        catch(e: Exception) {
-            println("Please enter valid shift value.\n")
+        if(isInt){
+            try {
+                val inputValue = stringInput!!.toInt()
+                userInput = inputValue.toString()
+                isValid = true
+            }
+            catch(e: Exception) {
+                println("Please enter valid shift value.")
+            }
+        }else{
+            userInput = stringInput!!
+            if(!stringInput.matches("^[0-9]*$".toRegex())){
+                isValid = true
+            }else{
+                println("Please enter valid string value.")
+            }
         }
     }
 
     return userInput
-}
-
-// Check entered value contains only alphabets or not
-fun checkStringUserInput(message: String): String {
-    var stringInput = ""
-    var isValid = false
-    while(!isValid){
-        print(message)
-        stringInput = readLine()!!
-        if(!stringInput.matches("^[0-9]*$".toRegex())){
-            isValid = true
-        }else{
-            println("Please enter valid string value.\n")
-        }
-    }
-
-    return stringInput
 }
 
 // This function takes plain text and shift key and return cipher text by performing caesar cipher
