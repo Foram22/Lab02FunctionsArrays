@@ -15,12 +15,22 @@ fun main() {
     val encryptedString = encrypt(plainText, shiftValue.toInt())
     println("Encrypted string: $encryptedString")
 
+
     /* ---------------Perform Average--------------- */
     // Create array of 10 elements with random integers.
     val randomArray = IntArray(10) { Random.nextInt(0,100) }
     // Get the average of elements in the given array using arrayAvg function.
     val average = arrayAvg(randomArray)
     println("\nAverage of elements in array: $average")
+
+
+    /* ---------------Perform Search--------------- */
+    // Search array created from which value can be check if it exists or not in it.
+    val searchArray = arrayOf<String> ("Sunday", "Monday", "Tuesday","Wednesday", "Thurday", "Friday", "Saturday")
+    // Get search value from user
+    print("\nPlease enter any value that you want to search from the given array: ")
+    val searchValue = readLine()!!
+    
 }
 
 // This function takes value from user
