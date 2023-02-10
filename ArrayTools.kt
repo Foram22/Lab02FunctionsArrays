@@ -30,7 +30,14 @@ fun main() {
     // Get search value from user
     print("\nPlease enter any value that you want to search from the given array: ")
     val searchValue = readLine()!!
-    
+    // arrayContains function that will return boolean value depending on whether search value is in the searchArray or not.
+    val isContains = arrayContains(searchArray, searchValue)
+    // Prints result
+    if(isContains) {
+        println("$searchValue is exist in the given array.")
+    }else{
+        println("$searchValue is not exist in the given array.")
+    }
 }
 
 // This function takes value from user
@@ -89,4 +96,16 @@ fun arrayAvg(randomArray: IntArray): Double {
     printArray = printArray.dropLast(2)
     print("$printArray]")
     return average / randomArray.size
+}
+
+// This function checks whether string value is exists in the given array or not
+fun arrayContains(searchArray: Array<String>, searchValue: String): Boolean {
+    var result = false
+    for (i in searchArray){
+        if(searchValue.lowercase() == i.lowercase()){
+            result = true
+            return result
+        }
+    }
+    return result
 }
