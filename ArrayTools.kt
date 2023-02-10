@@ -18,6 +18,9 @@ fun main() {
     /* ---------------Perform Average--------------- */
     // Create array of 10 elements with random integers.
     val randomArray = IntArray(10) { Random.nextInt(0,100) }
+    // Get the average of elements in the given array using arrayAvg function.
+    val average = arrayAvg(randomArray)
+    println("\nAverage of elements in array: $average")
 }
 
 // This function takes value from user
@@ -62,4 +65,18 @@ fun encrypt(plainText: String, shiftValue: Int): String {
         }
     }
     return cipherText
+}
+
+// This function takes integer array as a parameter and return average of elements
+fun arrayAvg(randomArray: IntArray): Double {
+    var average = 0.0
+    var printArray = ""
+    print("\nOriginal array: [")
+    for (i in randomArray){
+        printArray += "$i, "
+        average += i
+    }
+    printArray = printArray.dropLast(2)
+    print("$printArray]")
+    return average / randomArray.size
 }
