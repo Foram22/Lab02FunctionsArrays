@@ -4,6 +4,7 @@
                          arrayAvg(average of elements), arrayContains(search value) and reverse(gives reversed array). Also, prints results of 
                          each function. */
 
+import kotlin.random.Random
 fun main() {
     /* ---------------Perform Encryption--------------- */
     // Get String from user
@@ -13,6 +14,10 @@ fun main() {
     // Get cipher text of given plain text and shift key using encrypt function.
     val encryptedString = encrypt(plainText, shiftValue.toInt())
     println("Encrypted string: $encryptedString")
+
+    /* ---------------Perform Average--------------- */
+    // Create array of 10 elements with random integers.
+    val randomArray = IntArray(10) { Random.nextInt(0,100) }
 }
 
 // This function takes value from user
