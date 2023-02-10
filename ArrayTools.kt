@@ -44,6 +44,8 @@ fun main() {
     // Original Array which is going to be reversed
     val originalArray = arrayOf<Int>(1,2,3,4,5,6,7,8,9,10)
     print("\nOriginal Array: ")
+    printArray(originalArray)
+    
 }
 
 // This function takes value from user
@@ -114,4 +116,15 @@ fun arrayContains(searchArray: Array<String>, searchValue: String): Boolean {
         }
     }
     return result
+}
+
+// This function prints array elements [1, 2, 3, 4]
+fun printArray(array: Array<Int>) {
+    var result = "["
+    for (i in array) {
+        result += "$i, "
+    }
+    result = result.dropLast(2) // dropLast(n) will remove last n characters from the string
+    result += "]"
+    println(result)
 }
