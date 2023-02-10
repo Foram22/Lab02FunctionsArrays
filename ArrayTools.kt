@@ -8,9 +8,9 @@ import kotlin.random.Random
 fun main() {
     /* ---------------Perform Encryption--------------- */
     // Get String from user
-    val plainText = checkUserInput("Enter any string that you want to encrypt: ")
+    val plainText = checkUserInput(false, "Enter any string that you want to encrypt: ")
     // Get shift value from user
-    val shiftValue = checkUserInput("Enter the shift value for encryption: ")
+    val shiftValue = checkUserInput(true, "Enter the shift value for encryption: ")
     // Get cipher text of given plain text and shift key using encrypt function.
     val encryptedString = encrypt(plainText, shiftValue.toInt())
     println("Encrypted string: $encryptedString")
