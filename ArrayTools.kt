@@ -38,6 +38,12 @@ fun main() {
     }else{
         println("$searchValue is not exist in the given array.")
     }
+
+
+    /* ------------------Perform Reverse--------------- */
+    // Original Array which is going to be reversed
+    val originalArray = arrayOf<Int>(1,2,3,4,5,6,7,8,9,10)
+    print("\nOriginal Array: ")
 }
 
 // This function takes value from user
