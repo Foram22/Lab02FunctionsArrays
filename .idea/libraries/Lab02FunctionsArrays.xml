@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Lab02FunctionsArrays">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ArrauTools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ArrayTools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

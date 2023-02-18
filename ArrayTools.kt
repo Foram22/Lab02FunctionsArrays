@@ -89,7 +89,7 @@ fun encrypt(plainText: String, shiftValue: Int): String {
             val character = (plainText[i].code + shiftValue - 65) % 26 + 65
             cipherText += character.toChar()
         }else{
-            val character = (plainText[i].code + shiftValue - 97) % 97 + 97
+            val character = (plainText[i].code + shiftValue - 97) % 26 + 97
             cipherText += character.toChar()
         }
     }
@@ -135,7 +135,7 @@ fun printArray(array: Array<Int>) {
 
 // This function takes array as a parameter and return its reversed value
 fun reverse(originalArray: Array<Int>): Array<Int> {
-    var reversedArray = mutableListOf<Int> ()   // Empty mutable list
+    val reversedArray = mutableListOf<Int> ()   // Empty mutable list
     for (i in 0 until originalArray.size) {
         reversedArray.add(originalArray[originalArray.size - (i + 1)])
     }
